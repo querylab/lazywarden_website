@@ -25,41 +25,42 @@ sidebar_position: 3
 <a href="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_3.png"><img src="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_3.png" title="source: github.com" /></a>
 
 5) After setting up your Lazywarden project, you need to create the secrets that will be used in the project.
-- **Important:** You must create all secrets, even if you don't have an account.
-Also, make sure that the URLs for end with the correct structure. 
-- **For example:** **Vikunja** http://192.175.88.227:3456/api/v1
-- **For example:** **NextCloud** http://192.175.88.112:8400
-- **For example:** **Seafile**  http://192.175.88.115:8220
+
 
 <a href="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_4.png"><img src="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_4.png" title="source: github.com" /></a>
 
-6) With these secrets added, we can now modify our **.env** file to contain our secrets.
+6) With these secrets added, we can now modify our **.env** file to contain our secrets.  Remember to only add the Services you use, you do not need to add all the Services you use. 
 
 ``` PYTHON
-# Bitwarden Secrets
+#---------------------------------------------------------------------------------------
+# These are the 6 variables that are mandatory requirements for Bitwarden Secret Manager
 BW_URL=00000000-0000-0000-0000-000000000000
 BW_USERNAME=00000000-0000-0000-0000-000000000000
 BW_PASSWORD=00000000-0000-0000-0000-000000000000
-BW_TOTP_SECRET=00000000-0000-0000-0000-000000000000
 ENCRYPTION_PASSWORD=00000000-0000-0000-0000-000000000000
 ZIP_PASSWORD=00000000-0000-0000-0000-000000000000
 ZIP_ATTACHMENT_PASSWORD=00000000-0000-0000-0000-000000000000
+#---------------------------------------------------------------------------------------
 
-# pCloud Credentials
+
+# TOTP Seed for Aegis,Authy,Ente,GoogleAuth (Optional)
+BW_TOTP_SECRET=00000000-0000-0000-0000-000000000000
+
+# pCloud Credentials (Optional)
 PCLOUD_USERNAME=00000000-0000-0000-0000-000000000000
 PCLOUD_PASSWORD=00000000-0000-0000-0000-000000000000
 
-# Mega Credentials
+# Mega Credentials (Optional)
 MEGA_EMAIL=00000000-0000-0000-0000-000000000000
 MEGA_PASSWORD=00000000-0000-0000-0000-000000000000
 
-# Dropbox Credentials
+# Dropbox Credentials (Optional)
 DROPBOX_ACCESS_TOKEN=00000000-0000-0000-0000-000000000000
 DROPBOX_REFRESH_TOKEN=00000000-0000-0000-0000-000000000000
 DROPBOX_APP_KEY=00000000-0000-0000-0000-000000000000
 DROPBOX_APP_SECRET=00000000-0000-0000-0000-000000000000
 
-# Todoist Credentials
+# Todoist Credentials (Optional)
 TODOIST_TOKEN=00000000-0000-0000-0000-000000000000
 
 # CalDAV Credentials
@@ -67,37 +68,47 @@ CALDAV_URL=00000000-0000-0000-0000-000000000000
 CALDAV_USERNAME=00000000-0000-0000-0000-000000000000
 CALDAV_PASSWORD=00000000-0000-0000-0000-000000000000
 
-# Nextcloud Credentials
+# Nextcloud Credentials (Optional)
 NEXTCLOUD_URL=00000000-0000-0000-0000-000000000000
 NEXTCLOUD_USERNAME=00000000-0000-0000-0000-000000000000
 NEXTCLOUD_PASSWORD=00000000-0000-0000-0000-000000000000
 
-# Seafile Credentials
+# Seafile Credentials (Optional)
 SEAFILE_SERVER_URL=00000000-0000-0000-0000-000000000000
 SEAFILE_USERNAME=00000000-0000-0000-0000-000000000000
 SEAFILE_PASSWORD=00000000-0000-0000-0000-000000000000
 
-# Filebase Credentials
+# Filebase Credentials (Optional)
 FILEBASE_ACCESS_KEY=00000000-0000-0000-0000-000000000000
 FILEBASE_SECRET_KEY=00000000-0000-0000-0000-000000000000
 
-# KeePass Password
+# KeePass Password (Optional)
 KEEPASS_PASSWORD=00000000-0000-0000-0000-000000000000
 
-# Storj Credentials
+# Storj Credentials (Optional)
 STORJ_ACCESS_KEY=00000000-0000-0000-0000-000000000000
 STORJ_SECRET_KEY=00000000-0000-0000-0000-000000000000
 STORJ_ENDPOINT=00000000-0000-0000-0000-000000000000
 
-# R2 Credentials
+# R2 Credentials (Optional)
 R2_ACCESS_KEY_ID=00000000-0000-0000-0000-000000000000
 R2_SECRET_ACCESS_KEY=00000000-0000-0000-0000-000000000000
 R2_ENDPOINT_URL=00000000-0000-0000-0000-000000000000
 
-# Vikunja Credentials
+# Vikunja Credentials (Optional)
 VIKUNJA_API_TOKEN=00000000-0000-0000-0000-000000000000
 VIKUNJA_URL=00000000-0000-0000-0000-000000000000
 
+# Backblaze B2 Credentials (Optional)
+B2_APP_KEY_ID=00000000-0000-0000-0000-000000000000
+B2_APP_KEY=00000000-0000-0000-0000-000000000000
+
+```
+
+#### If you are going to use Vikunja's service also make sure that the URL to end with the correct structure. 
+
+```YAML
+Example: Vikunja http://192.175.88.227:3456/api/v1
 ```
 
 
@@ -109,17 +120,12 @@ VIKUNJA_URL=00000000-0000-0000-0000-000000000000
 
 <a href="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_7.png"><img src="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_7.png" title="source: github.com" /></a>
 
-- If you do not have TOTP enabled on your Bitwarden account, just put random characters as shown in the image below.
 
-<a href="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_8.png"><img src="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_8.png" title="source: github.com" /></a>
+#### 🔐 TOTP Activation
+If you do not have **TOTP enabled** in your Bitwarden account, simply leave the variable in the **.env** file blank.
 
-- Continue filling in the other variables one by one. If you do not have an account, for example for pCloud, MEGA, Filebase, Seafile, NextCloud or Dropbox fill in the variables with some random characters. For example, if you don't have a MEGA account, put the following:
-
-<a href="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_9.png"><img src="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_9.png" title="source: github.com" /></a>
-
-<a href="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_10.png"><img src="https://raw.githubusercontent.com/querylab/svg/refs/heads/main/secret_10.png" title="source: github.com" /></a>
-
-- As you can see in the images above, I don't have a MEGA account, so I used random strings. You always have to have something in the Secret Variables for the program to work. Now, the backup will only be stored locally in the chosen directory and in Google Drive, Dropbox, pCloud, NextCloud, Seafile and Filebase but not in MEGA as my account is not configured 
+#### 📋 Additional Variables
+Continue filling in the other variables one by one. For any services for which you do not have an account, simply **leave the variable blank** in the **.env** file. 
 
 
 - After creating all your secrets, create a Machine Account that will hold our ACCESS_TOKEN.
@@ -181,5 +187,3 @@ KEEPASS_PASSWORD=e2zkwTXe21!E9DxKp
 
 
 ```
-
-<!-- keymaps:end -->
