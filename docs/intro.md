@@ -41,9 +41,9 @@ Lazywarden is a Python automation tool designed to Backup and Restore data from 
 - 🔒 **Maximum Security:** Data protection with AES-256 encryption and Argon2 key derivation.
 - 🔄 **Automated Backups and Imports:** Keep your Bitwarden vault up to date and secure.
 - ✅ **Integrity Verification:** SHA-256 hash to ensure data integrity on every backup.
-- ☁️ **Multi-Cloud Support:** Store backups to services such as Dropbox, Google Drive, pCloud, MEGA, NextCloud, Seafile, Storj, Cloudflare R2, Filebase (IPFS), and via SMTP.
+- ☁️ **Multi-Cloud Support:** Store backups to services such as Dropbox, Google Drive, pCloud, MEGA, NextCloud, Seafile, Storj, Cloudflare R2, Backblaze B2, Filebase (IPFS), and via SMTP.
 - 🖥️ **Local Storage:** Save backups to a local path for greater control.
-- 🔔 **Real-Time Alerts:** Instant notifications on Discord, Telegram, and Slack.
+- 🔔 **Real-Time Alerts:** Instant notifications on Discord, Telegram, Ntfy and Slack.
 - 🗓️ **Schedule Management:** Integration with CalDAV, Todoist, and Vikunja to manage your schedule.
 - 🐳 **Easy Deployment:** Quick setup with Docker Compose.
 - 🤖 **Full Automation and Custom Scheduling:** Automatic backups with flexible scheduling options (daily, weekly, monthly, yearly). Integration with CalDAV, Todoist, and Vikunja for complete tracking and email notifications.
@@ -55,24 +55,26 @@ Lazywarden is a Python automation tool designed to Backup and Restore data from 
 </div>
 
 <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '40px' }}>
-    <a href="https://imgur.com/Xz2k5O8"><img src="https://i.imgur.com/Xz2k5O8.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/9oZa9uU"><img src="https://imgur.com/9oZa9uU.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/jWZzbvl"><img src="https://imgur.com/jWZzbvl.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/O0PZyxN"><img src="https://i.imgur.com/O0PZyxN.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/aa100eH"><img src="https://i.imgur.com/aa100eH.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/Grlq9aN"><img src="https://i.imgur.com/Grlq9aN.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/UYGpfR8"><img src="https://i.imgur.com/UYGpfR8.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/SVshyRn"><img src="https://imgur.com/SVshyRn.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/G37MsuK"><img src="https://i.imgur.com/G37MsuK.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/XpWPF0w"><img src="https://i.imgur.com/XpWPF0w.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/YMGE85n"><img src="https://i.imgur.com/YMGE85n.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/w9PULK5"><img src="https://i.imgur.com/w9PULK5.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/hjuaEcF"><img src="https://i.imgur.com/hjuaEcF.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/BhI5DBR"><img src="https://imgur.com/BhI5DBR.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/krgaizW"><img src="https://imgur.com/krgaizW.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/hRwMM9n"><img src="https://imgur.com/hRwMM9n.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/zdTnwat"><img src="https://imgur.com/zdTnwat.png" title="source: imgur.com" width="30" /></a>
-    <a href="https://imgur.com/i1hBmAD"><img src="https://imgur.com/i1hBmAD.png" title="source: imgur.com" width="30" /></a>
+    <a href="https://imgur.com/Xz2k5O8"><img src="https://i.imgur.com/Xz2k5O8.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/9oZa9uU"><img src="https://imgur.com/9oZa9uU.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/jWZzbvl"><img src="https://imgur.com/jWZzbvl.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/O0PZyxN"><img src="https://i.imgur.com/O0PZyxN.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/59ktW6q"><img src="https://imgur.com/59ktW6q.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/aa100eH"><img src="https://i.imgur.com/aa100eH.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/Grlq9aN"><img src="https://i.imgur.com/Grlq9aN.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/UYGpfR8"><img src="https://i.imgur.com/UYGpfR8.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/SVshyRn"><img src="https://imgur.com/SVshyRn.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/G37MsuK"><img src="https://i.imgur.com/G37MsuK.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/XpWPF0w"><img src="https://i.imgur.com/XpWPF0w.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/YMGE85n"><img src="https://i.imgur.com/YMGE85n.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/w9PULK5"><img src="https://i.imgur.com/w9PULK5.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/hjuaEcF"><img src="https://i.imgur.com/hjuaEcF.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/BhI5DBR"><img src="https://imgur.com/BhI5DBR.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/krgaizW"><img src="https://imgur.com/krgaizW.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/hRwMM9n"><img src="https://imgur.com/hRwMM9n.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/zdTnwat"><img src="https://imgur.com/zdTnwat.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/i1hBmAD"><img src="https://imgur.com/i1hBmAD.png" title="source: imgur.com" width="30"/></a>
+    <a href="https://imgur.com/DTXNqTW"><img src="https://imgur.com/DTXNqTW.png" title="source: imgur.com" width="30"/></a>
 </div>
 
 <div style={{ display: 'inline-flex', alignItems: 'center' }}>
